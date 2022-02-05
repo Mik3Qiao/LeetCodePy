@@ -11,9 +11,26 @@ class Solution:
 
         return max
 
+    def maxProfit2(self, prices: List[int]) -> int:
+        maxProfit = 0;
+        minPrice = float("inf")
+
+        for i in range(len(prices)):
+            if prices[i] < minPrice:
+                minPrice = prices[i]
+            elif (prices[i] - minPrice) > maxProfit:
+                maxProfit = prices[i] - minPrice
+
+        return maxProfit
+
+
+
 
 priceIns1 = [7, 1, 5, 3, 6, 4]
 priceIns2 = [7, 6, 4, 3, 1]
-solution1 = Solution()
-print(solution1.maxProfit(priceIns1))
-print(solution1.maxProfit(priceIns2))
+solutionIns = Solution()
+print(solutionIns.maxProfit(priceIns1))
+print(solutionIns.maxProfit(priceIns2))
+
+print(solutionIns.maxProfit2(priceIns1))
+print(solutionIns.maxProfit2(priceIns2))
