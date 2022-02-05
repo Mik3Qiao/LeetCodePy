@@ -1,10 +1,11 @@
 from typing import List
 
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         max: int = 0
         for i in range(0, len(prices) - 1):
-            for j in range(i+1, len(prices)):
+            for j in range(i + 1, len(prices)):
                 result = prices[j] - prices[i]
                 if result > max:
                     max = result
@@ -12,7 +13,7 @@ class Solution:
         return max
 
     def maxProfit2(self, prices: List[int]) -> int:
-        maxProfit = 0;
+        maxProfit = 0
         minPrice = float("inf")
 
         for i in range(len(prices)):
@@ -25,12 +26,18 @@ class Solution:
 
 
 
+def run():
+    priceIns1 = [7, 1, 5, 3, 6, 4]
+    priceIns2 = [7, 6, 4, 3, 1]
+    solutionIns = Solution()
+    if (solutionIns.maxProfit(priceIns1) == 5) and (solutionIns.maxProfit(priceIns2) == 0):
+        print("Day 1: solution 1 Passed")
+    else:
+        raise RuntimeError("Day 1 solution 1 failed")
 
-priceIns1 = [7, 1, 5, 3, 6, 4]
-priceIns2 = [7, 6, 4, 3, 1]
-solutionIns = Solution()
-print(solutionIns.maxProfit(priceIns1))
-print(solutionIns.maxProfit(priceIns2))
-
-print(solutionIns.maxProfit2(priceIns1))
-print(solutionIns.maxProfit2(priceIns2))
+    if (solutionIns.maxProfit2(priceIns1) == 5) and (solutionIns.maxProfit2(priceIns2) == 0):
+        print("Day 1: solution 2 Passed")
+    else:
+        raise RuntimeError("Day 1 solution 2 failed")
+    
+    
