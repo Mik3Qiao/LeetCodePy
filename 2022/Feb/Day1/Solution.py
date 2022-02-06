@@ -23,8 +23,7 @@ class Solution:
                 maxProfit = prices[i] - minPrice
 
         return maxProfit
-
-
+    
 
 def run():
     priceIns1 = [7, 1, 5, 3, 6, 4]
