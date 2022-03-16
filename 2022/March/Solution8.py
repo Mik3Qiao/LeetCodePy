@@ -29,3 +29,23 @@ class Solution:
         tail.next = None
 
         return new_head
+
+    # class Solution:
+    #     def isValid(self, s: str) -> bool:
+    #         localStack = []
+    #         for i in s:
+    #             if i == "(" or i == "[" or i == "{":
+    #                 localStack.append(i)
+    #             elif i == ")" or i == "]" or i == "}":
+    #                 if len(localStack) == 0:
+    #                     return False
+    #                 lastone = localStack.pop()
+    #                 if lastone == "(" and i == ")" or lastone == "[" and i == "]" or lastone == "{" and i == "}":
+    #                     continue
+    #                 else:
+    #                     return False
+    #
+    #         if len(localStack) == 0:
+    #             return True
+    #         else:
+    #             return False
